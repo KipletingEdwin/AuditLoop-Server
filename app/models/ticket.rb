@@ -22,6 +22,8 @@ class Ticket < ApplicationRecord
 
   belongs_to :customer, optional: true
   has_many :events
+  has_many :agent_runs
+  has_many :proposals
 
   validates :from_email, :subject, :body, :received_at, presence: true
   validates :state, inclusion: { in: STATES }
